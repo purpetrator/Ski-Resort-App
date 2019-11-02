@@ -1,5 +1,5 @@
 
- var where = "Poconos";
+ var where = "Boulder, CO";
 
 var queryURL = "https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/businesses/search?location=" + where + "&term=ski+resort" ;
 
@@ -24,7 +24,7 @@ var queryURL = "https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/busi
         var imageURL = response.businesses[i].image_url;
         var phone = response.businesses[i].display_phone;
         var rating = response.businesses[i].rating;
-        resortsDisplay.append("<div class='col-md-2'>")
+        resortsDisplay.append("<div class='col-md-2' lat=" + latitude + " long=" + longitude + ">");
         resortsDisplay.append("<strong>" + name + "</strong> <br/>");
       //  resortsDisplay.append("<img src= '" + imageURL + "'> <br/>");
       //I have the image tag above commented out because they're too large and need to be resized. Should be fairly straightforward bootstrap/css to add?
@@ -44,11 +44,9 @@ var queryURL = "https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/busi
 
 
 });
-// });
 
 
 
 
 
 //     // $("#movies-view").text(JSON.stringify(response));
-//   });
